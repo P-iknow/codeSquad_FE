@@ -1,4 +1,4 @@
-# **Git / GitHub 익히기 **
+# Git / GitHub 익히기
 
 ## **Why**
 
@@ -84,7 +84,7 @@
 - [코드스쿼드 링크](https://github.com/code-squad/codesquad-docs/blob/master/codereview/README.md)
 
 ## # git repo 구조
-https://www3.ntu.edu.sg/home/ehchua/programming/howto/images/Git_StorageDataFlow.png
+<img src = "https://www3.ntu.edu.sg/home/ehchua/programming/howto/images/Git_StorageDataFlow.png">
 - [깃 구조에 대한 이해](https://nanite.tistory.com/39)
 - working dir | working tree
     - 로컬
