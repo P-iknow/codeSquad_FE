@@ -1,4 +1,4 @@
-# **Step 1: Git / GitHub 익히기 1**
+# **Git / GitHub 익히기 **
 
 ## **Why**
 
@@ -84,9 +84,7 @@
 - [코드스쿼드 링크](https://github.com/code-squad/codesquad-docs/blob/master/codereview/README.md)
 
 ## # git repo 구조
-
-[](https://www.notion.so/8dd3cd9bdc594fdf82de683b4776e15a#974e3979328a41c7a6b0384668f00a68)
-
+https://www3.ntu.edu.sg/home/ehchua/programming/howto/images/Git_StorageDataFlow.png
 - [깃 구조에 대한 이해](https://nanite.tistory.com/39)
 - working dir | working tree
     - 로컬
