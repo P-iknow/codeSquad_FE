@@ -84,7 +84,8 @@
 - [코드스쿼드 링크](https://github.com/code-squad/codesquad-docs/blob/master/codereview/README.md)
 
 ## # git repo 구조
-<img src = "https://www3.ntu.edu.sg/home/ehchua/programming/howto/images/Git_StorageDataFlow.png">
+![image](https://user-images.githubusercontent.com/35516239/55554485-d8887380-571d-11e9-85ef-ea0d0f4b4b2e.png)
+
 - [깃 구조에 대한 이해](https://nanite.tistory.com/39)
 - working dir | working tree
     - 로컬
