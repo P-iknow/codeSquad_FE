@@ -1,6 +1,6 @@
 ## 디지털 논리회로
 
-## 논리회로 기본 정리
+### 논리회로 기본 정리
 ![Digital-Logic-Circuit](./step1-digital-logic-circuit.jpg)
 
 ### NAND 게이트
