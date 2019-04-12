@@ -9,7 +9,7 @@ function isNumber (value) {
     return typeof value === 'number' && isFinite(value);
 }
 
-function makekNumArrFromObj (obj) {
+function findNumInObj (obj) {
     let res = [];
     for (let key in obj) {
         if(isObject(obj[key])) {
@@ -26,4 +26,23 @@ function makekNumArrFromObj (obj) {
     return res;
 }
 
-makekNumArrFromObj(data.d1)
+
+
+findNumInObj(data.d1);
+
+function isTypeSk (obj){
+    return obj.type === "sk";
+}
+
+function hasChildNode(obj){
+    return obj.hasOwnProperty("childnode")  
+}
+
+
+function findSkInObjOfArr(arr) {
+    if (isTypeSk(arr[0])) {
+        return arr[0].name ;
+    }
+}
+
+findSkInObjOfArr(data.d2);
