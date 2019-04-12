@@ -10,12 +10,20 @@ function isNumber (value) {
 }
 
 function makekNumArrFromObj (obj) {
-    let res = []
+    let res = [];
     for (let key in obj) {
         if(isObject(obj[key])) {
-
-        } 
-
+            for( let skey in obj[key]) {
+                if (isNumber(obj[key][skey])) {
+                    res.push(skey);
+                }
+            }
+        }
+        if(isNumber(obj[key])) {
+            res.push(key);
+        }
     }
-
+    return res;
 }
+
+makekNumArrFromObj(data.d1)
