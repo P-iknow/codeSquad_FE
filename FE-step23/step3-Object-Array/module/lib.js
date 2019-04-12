@@ -1,6 +1,4 @@
 const data = require("./data")
-
-// Returns if a value is an object
 function isObject (value) {
     return value && typeof value === 'object' && value.constructor === Object;
 }
@@ -9,7 +7,7 @@ function isNumber (value) {
     return typeof value === 'number' && isFinite(value);
 }
 
-function findNumInObj (obj) {
+function findNumProperty (obj) {
     let res = [];
     for (let key in obj) {
         if(isObject(obj[key])) {
@@ -28,21 +26,20 @@ function findNumInObj (obj) {
 
 
 
-findNumInObj(data.d1);
+function findSkUser(arr){
+    const res = [];
+    (function closure(arr) {
+        if ( arr.length > 0 ) {
+            for ( key of arr ) {
+                if (key.type === "sk") {
+                    res.push(key.name);
+                }
+                closure(key.childnode);
+            }
+        }
+    })(arr)
+    return res;
+} 
 
-function isTypeSk (obj){
-    return obj.type === "sk";
-}
-
-function hasChildNode(obj){
-    return obj.hasOwnProperty("childnode")  
-}
-
-
-function findSkInObjOfArr(arr) {
-    if (isTypeSk(arr[0])) {
-        return arr[0].name ;
-    }
-}
-
-findSkInObjOfArr(data.d2);
+findSkUser(data.d2);
+findNumProperty(data.d1);
