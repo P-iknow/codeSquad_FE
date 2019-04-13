@@ -55,3 +55,21 @@ function findSkUser(arr){
 
 findSkUser(data.d2);
 findNumProperty(data.d1);
+
+const multiple  = (acc, cur) => {
+   return (acc * cur);
+}
+
+const myreduce = (arr, callback, initialValue) => {
+    let accumulator = initialValue, i = 0;
+    if (accumulator === undefined) {
+        accumulator = arr[0];
+        i++;
+    }
+    for ( i; i<arr.length; i++) {
+        accumulator = callback(accumulator, arr[i], i, arr)
+    }
+    return accumulator
+}
+let test = [1,2,3,4,5];
+myreduce(test, multiple, 10);
