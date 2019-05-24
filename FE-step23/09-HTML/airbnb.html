@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airbnb</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+  <section>
+    <h2>에어비엔비에서 한국의 숙소를 찾아보세요</h2>
+    <p>
+      혼자하는 여행에 적합한 개인실부터 여럿이 함께하는 여행에 좋은 집 전체
+      숙소까지, 에어비엔비엔 다 있습니다.
+    </p>
+    <form action="" method="get">
+      <div>
+        <div>
+          <label for="destination">목적지</label>
+        </div>
+        <div>
+          <input id="destination" type="text" placeholder="모든위치" />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <label for="checkIn">체크인</label>
+          </div>
+          <div>
+            <input id="checkIn" type="date" />
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="checkOut">체크아웃</label>
+          </div>
+          <div>
+            <input id="checkOut" type="date" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <label for="adults">어른</label>
+          </div>
+          <div>
+            <select id="adults" name="adults" class="" data-vars-select-name="adults">
+              <option selected="" value="1">성인 1명</option>
+              <option value="2">성인 2명</option>
+              <option value="3">성인 3명</option>
+              <option value="4">성인 4명</option>
+              <option value="5">성인 5명</option>
+              <option value="6">성인 6명</option>
+              <option value="7">성인 7명</option>
+              <option value="8">성인 8명</option>
+              <option value="9">성인 9명</option>
+              <option value="10">성인 10명</option>
+              <option value="11">성인 11명</option>
+              <option value="12">성인 12명</option>
+              <option value="13">성인 13명</option>
+              <option value="14">성인 14명</option>
+              <option value="15">성인 15명</option>
+              <option value="16">성인 16명</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="children">어린이</label>
+          </div>
+          <div>
+            <select id="children" name="children" class="" data-vars-select-name="children">
+              <option selected="" value="0">어린이 0명</option>
+              <option value="1">어린이 1명</option>
+              <option value="2">어린이 2명</option>
+              <option value="3">어린이 3명</option>
+              <option value="4">어린이 4명</option>
+              <option value="5">어린이 5명</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit">검색</button>
+      </div>
+    </form>
+  </section>
+  <section>
+    <h2>한국 숙소에 직접 다녀간 게스트의 후기</h2>
+    <p>
+      <div><svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"
+          style="height:24px;width:24px;fill:#FFB400">
+          <path
+            d="m21.95 9.48a.84.84 0 0 0 -.87-.48h-4.62a.5.5 0 0 0 0 1l4.14.01-4.81 4.17a.5.5 0 0 0 -.14.57l2.65 6.38-6.07-3.72a.5.5 0 0 0 -.52 0l-6.08 3.72 2.65-6.37a.5.5 0 0 0 -.13-.57l-4.75-4.18h5.75a.5.5 0 0 0 .46-.3l2.37-5.37 1.58 3.57a.5.5 0 0 0 .91-.41l-1.72-3.88a.8.8 0 0 0 -1.56-.01l-2.38 5.39h-5.9a.83.83 0 0 0 -.87.48.85.85 0 0 0 .32.96l4.85 4.25-2.78 6.67a.81.81 0 0 0 .16.98.66.66 0 0 0 .43.15 1.1 1.1 0 0 0 .56-.18l6.37-3.91 6.38 3.92a.81.81 0 0 0 .99.03c.15-.12.37-.41.15-1l-2.77-6.66 4.92-4.26a.84.84 0 0 0 .31-.95zm-.78.53h-.01"
+            fill="#484848"></path>
+          <path
+            d="m11 21.5a.5.5 0 1 1 -.5-.5.5.5 0 0 1 .5.5zm-3.5-15.5a.5.5 0 1 0 .5.5.5.5 0 0 0 -.5-.5zm15 10h-.5v-.5a.5.5 0 0 0 -1 0v .5h-.5a.5.5 0 0 0 0 1h .5v.5a.5.5 0 0 0 1 0v-.5h.5a.5.5 0 0 0 0-1zm-15-13h-.5v-.5a.5.5 0 0 0 -1 0v .5h-.5a.5.5 0 0 0 0 1h .5v.5a.5.5 0 0 0 1 0v-.5h.5a.5.5 0 0 0 0-1zm10.22 7.54a.84.84 0 0 0 -.17-.02q-.28-.01-3.19 0a .6.6 0 0 1 -.55-.35l-1.5-3.23a.42.42 0 0 0 -.75 0l-1.81 4.14a2.92 2.92 0 0 0 4.12 3.72l.46-.26 3.49-2.99.16-.18a.5.5 0 0 0 -.26-.82z">
+          </path>
+        </svg></div>
+      <div class="_czm8crp">한국의 숙소는 <strong>1,000,000개</strong> 이상의 후기에서 별 5개 중 <strong>4.7개</strong>를 받았습니다</div>
+    </p>
+    <div class="review-section">
+      <div class="review">
+        <div class="house-imeage">
+          <a href="">
+            <img src="./img/house1.jpg" alt="">
+          </a>
+        </div>
+        <div class="star_group">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review">
+          너무 좋았던 여행이었어요.
+          호스트님의 센스있는 인테리어와 소품들...
+          일회용 비누, 슬리퍼, 치솔, 치약, 바디솜~!!!
+          정말 깨끗했고, 아이랑 함께 한 여행이랑 신경쓸것도 많았는데 호텔보다 좋았어요.
+          낮에는 근처 식당서 밥먹고 스타벅스에서 커피한잔하며 룰루랄라 밤에는 해운대 바다보며 산책후 집으로 유모차로 금방 올수있음.
+          넓은 주차공간도 넘넘 좋고, 편의점도 건물 1층에 있구 보안이 잘되있어 밤에도 안심~^^
+          싱크대가 있으니 요리 아니더라두 아이있는 분은 편리해요. 비치해논 라면도 야식으로 뚝딱~~
+          해운대 여행하는 가족분 및 여자분께 강력 추천드려요~♡
+        </p>
+        <div class="user_information">
+          <img src="./img/user-crong.png" alt="에이비엔비 유저 이미지">
+          <div class="">
+            <h3 class="">Crong</h3>
+            <span class="country">프랑스</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="house-imeage">
+          <a href="">
+            <img src="./img/house2.png" alt="">
+          </a>
+        </div>
+        <div class="star_group">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review">
+          너무 좋았던 여행이었어요.
+          호스트님의 센스있는 인테리어와 소품들...
+          일회용 비누, 슬리퍼, 치솔, 치약, 바디솜~!!!
+          정말 깨끗했고, 아이랑 함께 한 여행이랑 신경쓸것도 많았는데 호텔보다 좋았어요.
+          낮에는 근처 식당서 밥먹고 스타벅스에서 커피한잔하며 룰루랄라 밤에는 해운대 바다보며 산책후 집으로 유모차로 금방 올수있음.
+          넓은 주차공간도 넘넘 좋고, 편의점도 건물 1층에 있구 보안이 잘되있어 밤에도 안심~^^
+          싱크대가 있으니 요리 아니더라두 아이있는 분은 편리해요. 비치해논 라면도 야식으로 뚝딱~~
+          해운대 여행하는 가족분 및 여자분께 강력 추천드려요~♡
+        </p>
+        <div class="user_information">
+          <img src="./img/user-honux.png" alt="에이비엔비 유저 이미지">
+          <div class="">
+            <h3 class="">Honux</h3>
+            <span class="country">프랑스</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="house-imeage">
+          <a href="">
+            <img src="./img/house3.png" alt="">
+          </a>
+        </div>
+        <div class="star_group">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="review">
+          너무 좋았던 여행이었어요.
+          호스트님의 센스있는 인테리어와 소품들...
+          일회용 비누, 슬리퍼, 치솔, 치약, 바디솜~!!!
+          정말 깨끗했고, 아이랑 함께 한 여행이랑 신경쓸것도 많았는데 호텔보다 좋았어요.
+          낮에는 근처 식당서 밥먹고 스타벅스에서 커피한잔하며 룰루랄라 밤에는 해운대 바다보며 산책후 집으로 유모차로 금방 올수있음.
+          넓은 주차공간도 넘넘 좋고, 편의점도 건물 1층에 있구 보안이 잘되있어 밤에도 안심~^^
+          싱크대가 있으니 요리 아니더라두 아이있는 분은 편리해요. 비치해논 라면도 야식으로 뚝딱~~
+          해운대 여행하는 가족분 및 여자분께 강력 추천드려요~♡
+        </p>
+        <div class="user_information">
+          <img src="./img/user-jk.png" alt="에이비엔비 유저 이미지">
+          <div class="">
+            <h3 class="">Crong</h3>
+            <span class="country">프랑스</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+</body>
+
+</html>
