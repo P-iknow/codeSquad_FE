@@ -1,15 +1,22 @@
 // const helper = require('./helper');
+// import helper from './helper.js';
 
 class Carousel {
   constructor() {
+    // header
+    this.header = document.querySelector('.carousel__header');
+    this.cards = [...this.header.querySelectorAll('.carousel__header--item')];
+    // carousel__content
     this.carousel = document.querySelector('.carousel__content');
     this.container = this.carousel.querySelector('.carousel__container');
     this.item = this.carousel.querySelector('.carousel__item');
+    this.items = this.carousel.querySelectorAll('.carousel__item');
     this.prev = document.querySelector('.prev');
     this.next = document.querySelector('.next');
     this.itemWidth = this.item.offsetWidth;
     this.offset = 0;
     this.currentItem = 1;
+    this.itemsLength = this.items.length;
     // 설정 정보
     this.config = {
       duration: 200,
@@ -26,11 +33,18 @@ class Carousel {
     this.carousel.style.width = this.item.offsetWidth + 'px';
     this.carousel.style.height = this.item.offsetHeight + 'px';
     this.attachEvent();
+    this.insertClone();
+    this.offset = -this.itemWidth;
+    this.moveWithoutAnimation();
+    this.carousel.style.opacity = 1;
   }
 
   attachEvent() {
     this.prev.addEventListener('click', this.moveToPrev.bind(this));
     this.next.addEventListener('click', this.moveToNext.bind(this));
+    this.cards.forEach(card =>
+      card.addEventListener('click', this.cardClick.bind(this)),
+    );
   }
 
   moveToNext() {
@@ -41,7 +55,10 @@ class Carousel {
     // 현재 표시 중인 캐러셀 아이템 인덱스(1~4)
     this.currentItem++;
     // prev, next 버튼 활성화/비활성화 결정
-    // this.checkMovable();``
+    // this.checkMovable();
+    if (this.isClone()) this.fakeMove();
+    this.header.querySelector('.active').classList.toggle('active');
+    this.cards[this.currentItem - 1].classList.toggle('active');
   }
 
   moveToPrev() {
@@ -53,6 +70,9 @@ class Carousel {
     this.currentItem--;
     // prev, next 버튼 활성화/비활성화 결정
     // this.checkMovable();
+    if (this.isClone()) this.fakeMove();
+    this.header.querySelector('.active').classList.toggle('active');
+    this.cards[this.currentItem - 1].classList.toggle('active');
   }
 
   move() {
@@ -60,6 +80,55 @@ class Carousel {
       this.config.easing
     }`;
     this.container.style.transform = `translate3D(${this.offset}px, 0, 0)`;
+  }
+
+  insertClone() {
+    const firstItem = this.items[0];
+    const lastItem = this.items[this.items.length - 1];
+
+    this.container.insertBefore(
+      lastItem.cloneNode(true),
+      this.container.firstChild,
+    );
+    this.container.appendChild(firstItem.cloneNode(true));
+  }
+
+  isClone() {
+    return this.currentItem === 0 || this.currentItem === this.itemsLength + 1;
+  }
+
+  moveWithoutAnimation() {
+    this.container.style.transition = 'none';
+    this.container.style.transform = `translate3D(${this.offset}px, 0, 0)`;
+  }
+
+  fakeMove() {
+    if (this.currentItem === 0) {
+      this.offset -= this.itemsLength * this.itemWidth;
+      this.currentItem = this.currentItem + this.itemsLength;
+    } else {
+      this.offset += this.itemsLength * this.itemWidth;
+      this.currentItem = this.currentItem - this.itemsLength;
+    }
+    setTimeout(() => this.moveWithoutAnimation(), this.config.duration);
+  }
+
+  cardClick(e) {
+    const currentHeaderIndex = this.cards.indexOf(
+      this.header.querySelector('.active'),
+    );
+    const clickedHeaderIndex = this.getCardIndex(
+      e.target.closest('.carousel__header--item'),
+    );
+    this.offset += this.itemWidth * (currentHeaderIndex - clickedHeaderIndex);
+    this.header.querySelector('.active').classList.toggle('active');
+    this.cards[clickedHeaderIndex].classList.toggle('active');
+    this.move();
+    this.currentItem = clickedHeaderIndex + 1;
+  }
+
+  getCardIndex(element) {
+    return this.cards.indexOf(element);
   }
 }
 
