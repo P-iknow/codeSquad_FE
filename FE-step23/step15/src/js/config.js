@@ -6,7 +6,7 @@ const global = {
 };
 
 export const model = {
-  srcUrl: './data.json'
+  srcUrl: './src/data.json'
 };
 
 export const controller = {
@@ -14,11 +14,13 @@ export const controller = {
   resultEl: global.resultEl,
   resultItem: global.resultItem,
   resultItemHighlighted: global.resultItemHighlighted,
-  delay: 300
+  debounceDelay: 300
 };
 
 export const inputView = {
-  inputEl: global.inputEl
+  inputEl: global.inputEl,
+  onSelect: 'onSelect',
+  throttleDelay: 60
 };
 
 export const resultView = {
@@ -36,7 +38,7 @@ export const resultView = {
 
   recentQueryTemplate(recentQueryList) {
     return recentQueryList.reduce((prev, curr) => {
-      return `${prev}<li class="${global.resultItem}"tabindex=1>${curr}</li>`;
+      return `${prev}<li class="${global.resultItem}" data-value="${curr}"><a href="#">${curr}</a></li>`;
     }, '');
   },
 
@@ -48,7 +50,7 @@ export const resultView = {
         match,
         `<span class=${global.resultItemHighlighted}>${match}</span>`
       );
-      return `${prev}<li class="${global.resultItem}" data-value="${curr}" tabindex=1>${hilghtedSuggestion}</li>`;
+      return `${prev}<li class="${global.resultItem}" data-value="${curr}"><a href="#">${hilghtedSuggestion}</a></li>`;
     }, '');
   },
 
