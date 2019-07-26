@@ -9,7 +9,7 @@ import renderHTML from '../PLib/render.js';
 window.addEventListener('DOMContentLoaded', () => {
   renderHTML({
     currentVersion: 1,
-    url: '../static/tpl-src-data.json',
+    url: '../amazone-clone/static/tpl-src-data.json',
     templateFunc: mainTpl
   }).then(_ => {
     autoSugesstionInit();
